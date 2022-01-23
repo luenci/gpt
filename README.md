@@ -4,6 +4,12 @@
 
 ## 使用方法
 
+### 查看版本
+```bash
+    golang-web version
+```
+
+### 创建项目
 ```bash
     golang-web create project
 ```
