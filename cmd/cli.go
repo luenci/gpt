@@ -1,31 +1,30 @@
-package cli
+package cmd
 
 import (
 	"fmt"
+	"github.com/luenci/golang-project-template/internal/project"
+	"github.com/luenci/golang-project-template/internal/version"
 	"os"
 
 	"github.com/spf13/cobra"
 )
 
 var (
-	commands string
-
 	rootCmd = &cobra.Command{
-		Use:   "cli",
+		Use:   "golang-web",
 		Short: "A simple command create golang projects templates",
 		Long: `This command creates golang projects templates,
 			default templates is gin-demo( https://github.com/Lucareful/gin-demo)`,
+		Args: cobra.MinimumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("cli")
-			for _, command := range commands {
-				fmt.Println(command)
-			}
+			fmt.Println("cmd")
 		},
 	}
 )
 
 func init() {
-	rootCmd.PersistentFlags().StringP("rootflag", "r", "two", "")
+	rootCmd.AddCommand(version.VersionCmd)
+	rootCmd.AddCommand(project.CreateCmd)
 }
 
 func Run() {

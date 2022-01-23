@@ -1,7 +1,7 @@
 package main
 
-import "github.com/luenci/golang-project-template/cli"
+import "github.com/luenci/golang-project-template/cmd"
 
 func main() {
-	cli.Run()
+	cmd.Run()
 }
