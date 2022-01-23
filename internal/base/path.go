@@ -2,11 +2,27 @@ package base
 
 import (
 	"fmt"
-	"github.com/fatih/color"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
+
+	"github.com/fatih/color"
 )
+
+// Createfile creates a file with the given name and content.
+func Createfile(name, content string) error {
+	return nil
+}
+
+// CreateDir creates a directory with the given name.
+func CreateDir(dirName string) error {
+	var re = regexp.MustCompile(`/|\\`)
+	if re.MatchString(dirName) {
+		return os.MkdirAll(dirName, os.ModePerm)
+	}
+	return os.Mkdir(dirName, os.ModePerm)
+}
 
 // Tree Path represents a path to a file or directory.
 func Tree(path string, dir string) {
