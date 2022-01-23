@@ -1,4 +1,4 @@
-package template
+package content
 
 // ProtoFNC is the .proto file template used for new function projects.
 var ProtoFNC = `syntax = "proto3";

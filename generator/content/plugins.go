@@ -1,4 +1,4 @@
-package template
+package content
 
 // Plugins is the plugins template used for new projects.
 var Plugins = `package main

@@ -1,4 +1,4 @@
-package template
+package content
 
 // SkaffoldCFG is the Skaffold config template used for new projects.
 var SkaffoldCFG = `---

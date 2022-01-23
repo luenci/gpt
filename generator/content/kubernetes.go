@@ -1,4 +1,4 @@
-package template
+package content
 
 // KubernetesEnv is a Kubernetes configmap manifest template used for
 // environment variables in new projects.

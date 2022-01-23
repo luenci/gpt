@@ -5,9 +5,12 @@ import (
 	"fmt"
 	"os"
 	path "path/filepath"
+	"strings"
 
 	"github.com/AlecAivazis/survey/v2"
+
 	"github.com/fatih/color"
+	"github.com/luenci/golang-project-template/generator/template"
 	"github.com/luenci/golang-project-template/internal/base"
 )
 
@@ -37,6 +40,17 @@ func (p *Project) NewProject(ctx context.Context, dir string) error {
 	}
 	fmt.Printf("🚀 Creating project %s, please wait a moment.\n\n", p.Name)
 	// todo: create project
+	for _, file := range template.ParseTemplate(template.GinDemo) {
+		if strings.Contains(file, ".") {
+			if err := base.Createfile(to, file, ""); err != nil {
+				return err
+			}
+		} else {
+			if err := base.CreateDir(to, file); err != nil {
+				return err
+			}
+		}
+	}
 
 	base.Tree(to, dir)
 

@@ -1,4 +1,4 @@
-package template
+package content
 
 // Dockerfile is the Dockerfile template used for new projects.
 var Dockerfile = `FROM golang:alpine AS builder

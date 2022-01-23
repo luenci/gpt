@@ -1,4 +1,4 @@
-package template
+package content
 
 // HandlerFNC is the handler template used for new function projects.
 var HandlerFNC = `package handler

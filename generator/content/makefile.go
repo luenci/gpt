@@ -1,4 +1,4 @@
-package template
+package content
 
 // Makefile is the Makefile template used for new projects.
 var Makefile = `GOPATH:=$(shell go env GOPATH)

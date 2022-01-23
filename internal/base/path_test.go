@@ -22,7 +22,7 @@ func TestCreateDir(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := CreateDir(tt.args.dirName); err != nil {
+			if err := CreateDir("", tt.args.dirName); err != nil {
 				t.Errorf("CreateDir() error = %v", err)
 			}
 			// 愿天堂没有单元测试（清理逻辑写的头疼）

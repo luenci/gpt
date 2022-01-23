@@ -1,4 +1,4 @@
-package template
+package content
 
 // MainCLT is the main template used for new client projects.
 var MainCLT = `package main
