@@ -3,11 +3,12 @@ package project
 import (
 	"context"
 	"fmt"
+	"os"
+	path "path/filepath"
+
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/fatih/color"
 	"github.com/luenci/golang-project-template/internal/base"
-	"os"
-	"path"
 )
 
 type Project struct {
@@ -35,13 +36,8 @@ func (p *Project) NewProject(ctx context.Context, dir string) error {
 		os.RemoveAll(to)
 	}
 	fmt.Printf("🚀 Creating project %s, please wait a moment.\n\n", p.Name)
-	e := os.Rename(
-		path.Join(to, "cmd", "server"),
-		path.Join(to, "cmd", p.Name),
-	)
-	if e != nil {
-		return e
-	}
+	// todo: create project
+
 	base.Tree(to, dir)
 
 	fmt.Printf("\n🍺 Project creation succeeded %s\n", color.GreenString(p.Name))

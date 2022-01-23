@@ -4,15 +4,16 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"os"
+	path "path/filepath"
+	"time"
+
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/spf13/cobra"
-	"os"
-	"path"
-	"time"
 )
 
 func init() {
-	timeout = "60s"
+	timeout = "180s"
 	CreateCmd.Flags().StringVarP(&timeout, "timeout", "t", timeout, "time out")
 }
 
