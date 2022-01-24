@@ -63,8 +63,8 @@
 ```
 
 ### 说明
-- 默认的项目结构是为gin框架创建的，基于传统 MVC 架构而设计的。详情见：[gin-demo](!https://github.com/Lucareful/gin-demo#readme)
-- 我个人比较喜欢统一的代码风格和结构,所以将 `pre-commit` 这个配置文件设置为默认项。关于 `pre-commit` 的详细介绍，请参考：[pre-commit](!https://pre-commit.com)
+- 默认的项目结构是为gin框架创建的，基于传统 MVC 架构而设计的。详情见：[gin-demo](https://github.com/Lucareful/gin-demo#readme)
+- 我个人比较喜欢统一的代码风格和结构,所以将 `pre-commit` 这个配置文件设置为默认项。关于 `pre-commit` 的详细介绍，请参考：[pre-commit](https://pre-commit.com)
 
 ### TODO List
  - [ ] 发布一个版本
@@ -75,8 +75,8 @@
 
 ### 鸣谢
   > 感谢以下项目的给我的启发
-  - [kratos](!https://github.com/go-kratos/kratos)
-  - [go-micro](!https://github.com/asim/go-micro)
+  - [kratos](https://github.com/go-kratos/kratos)
+  - [go-micro](https://github.com/asim/go-micro)
 
 ### 后记
   > 如果你有什么想法，欢迎在issue中提出。
