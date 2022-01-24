@@ -5,13 +5,7 @@ var Makefile = `GOPATH:=$(shell go env GOPATH)
 
 .PHONY: init
 init:
-	@go get -u google.golang.org/protobuf/proto
-	@go install github.com/golang/protobuf/protoc-gen-go@latest
-	@go install github.com/asim/go-micro/cmd/protoc-gen-micro/v4@latest
-
-.PHONY: proto
-proto:
-	@protoc --proto_path=. --micro_out=. --go_out=:. proto/{{.Service}}.proto
+	@go get -u github.com/gin-gonic/gin
 
 .PHONY: update
 update:
@@ -23,7 +17,7 @@ tidy:
 
 .PHONY: build
 build:
-	@go build -o {{.Service}}{{if .Client}}-client{{end}} *.go
+	@go build -o -tags=jsoniter -gcflags='-l=4' -ldflags='-s -w' {{.ProjectName}} main.go
 
 .PHONY: test
 test:
@@ -31,5 +25,5 @@ test:
 
 .PHONY: docker
 docker:
-	@docker build -t {{.Service}}{{if .Client}}-client{{end}}:latest .
+	@docker build -t {{.ProjectName}}:latest .
 `
