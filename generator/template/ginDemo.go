@@ -17,14 +17,9 @@ tests
 types
 request
 response
-go.mod
 go.sum
-main.go
 CHANGELOG.md
-README.md
-.gitignore
-.pre-commit-config.yaml
-`
+README.md`
 
 // ParseTemplate parse template directory and files.
 func ParseTemplate(contents string) []string {

@@ -17,7 +17,7 @@ tidy:
 
 .PHONY: build
 build:
-	@go build -o -tags=jsoniter -gcflags='-l=4' -ldflags='-s -w' {{ProjectName}} main.go
+	@go build -o -tags=jsoniter -gcflags='-l=4' -ldflags='-s -w' {{.}} main.go
 
 .PHONY: test
 test:
@@ -25,5 +25,5 @@ test:
 
 .PHONY: docker
 docker:
-	@docker build -t {{ProjectName}}:latest .
+	@docker build -t {{.}}:latest .
 `

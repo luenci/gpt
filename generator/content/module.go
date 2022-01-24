@@ -1,7 +1,7 @@
 package content
 
 // Module is the go.mod template used for new projects.
-var Module = `module {{ProjectName}}
+var Module = `module {{.}}
 
 go 1.16
 
