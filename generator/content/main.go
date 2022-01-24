@@ -1,6 +1,6 @@
 package content
 
-// MainCLT is the main template used for new client projects.
+// MainCLT is the main template used for new projects.
 var MainCLT = `package main
 
 import "github.com/gin-gonic/gin"
