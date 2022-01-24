@@ -7,6 +7,8 @@ import (
 	path "path/filepath"
 	"strings"
 
+	"github.com/luenci/golang-project-template/generator"
+
 	"github.com/AlecAivazis/survey/v2"
 
 	"github.com/fatih/color"
@@ -39,10 +41,10 @@ func (p *Project) NewProject(ctx context.Context, dir string) error {
 		os.RemoveAll(to)
 	}
 	fmt.Printf("🚀 Creating project %s, please wait a moment.\n\n", p.Name)
-	// todo: create project
+	// 生成空文件和目录
 	for _, file := range template.ParseTemplate(template.GinDemo) {
 		if strings.Contains(file, ".") {
-			if err := base.Createfile(to, file, ""); err != nil {
+			if err := base.CreateFile(to, file, ""); err != nil {
 				return err
 			}
 		} else {
@@ -51,7 +53,21 @@ func (p *Project) NewProject(ctx context.Context, dir string) error {
 			}
 		}
 	}
+	// todo: 配置参数选择是否需要默认模版
+	// 生成默认模版文件
+	for fileName, temlp := range generator.TemplateMap {
+		if err := base.CreateTemplateFile(to, fileName, temlp); err != nil {
+			return err
+		}
+	}
+	// 生成参数模版文件
+	for fileName, argsTemlp := range generator.ArgsTemplateMap {
+		if err := base.CreateArgsTemplate(to, fileName, argsTemlp); err != nil {
+			return err
+		}
+	}
 
+	// 输出项目信息
 	base.Tree(to, dir)
 
 	fmt.Printf("\n🍺 Project creation succeeded %s\n", color.GreenString(p.Name))
@@ -59,6 +75,6 @@ func (p *Project) NewProject(ctx context.Context, dir string) error {
 
 	fmt.Println(color.WhiteString("$ cd %s", p.Name))
 	fmt.Println("			🤝 Thanks for using golang-project-template")
-	fmt.Println("	📚 Tutorial: https://go-kratos.dev/docs/getting-started/start")
+	fmt.Println("	📚 Tutorial: https://github.com/luenci/golang-project-template#readme")
 	return nil
 }
