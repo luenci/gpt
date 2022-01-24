@@ -1,8 +1,0 @@
-# don't commit the service binary to vcs
-.vscode
-
-.DS_Store
-
-vendor/
-
-.idea/
