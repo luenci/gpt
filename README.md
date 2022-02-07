@@ -14,11 +14,24 @@
 ```
 
 ### 使用方法
-#### 下载仓库
+#### go get 安装
+```bash
+    go get -v github.com/luenci/go get -v github.com/luenci/golang-project-template
+```
+
+##### 验证版本
+```shell
+    golang-project-template version
+```
+
+
+
+#### 源码安装
+##### 下载仓库
 ```bash
     git clone https://github.com/luenci/golang-project-template.git
 ```
-#### 进入项目
+##### 进入项目
 ```shell
 ➜ cd golang-project-template
 
@@ -67,7 +80,7 @@
 - 我个人比较喜欢统一的代码风格和结构,所以将 `pre-commit` 这个配置文件设置为默认项。关于 `pre-commit` 的详细介绍，请参考：[pre-commit](https://pre-commit.com)
 
 ### TODO List
- - [ ] 发布一个版本
+ - [x] 发布一个版本
  - [ ] 增加单元测试s
  - [ ] 增加更多的项目结构选择
  - [ ] 增加更多的参数配置化
