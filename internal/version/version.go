@@ -2,11 +2,12 @@ package version
 
 import (
 	"fmt"
+
 	"github.com/spf13/cobra"
 )
 
 // Version is the golang-project-template Version.
-const Version = "0.0.1"
+const Version = "1.0.1"
 
 func init() {
 }
