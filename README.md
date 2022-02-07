@@ -16,7 +16,7 @@
 ### 使用方法
 #### go get 安装
 ```bash
-    go get -v github.com/luenci/go get -v github.com/luenci/golang-project-template
+    go get -u github.com/luenci/golang-project-template
 ```
 
 ##### 验证版本
