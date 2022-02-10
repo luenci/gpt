@@ -1,4 +1,4 @@
-# gpt
+# gpt(golang-project-template)
 > 本项目是通过CIL命令，一键创建一个 golang web 项目的结构。
 
 ## 使用方法

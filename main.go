@@ -1,6 +1,6 @@
 package main
 
-import "github.com/luenci/golang-project-template/cmd"
+import "github.com/luenci/gpt/cmd"
 
 func main() {
 	cmd.Run()

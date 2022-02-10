@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/luenci/golang-project-template/internal/project"
-	"github.com/luenci/golang-project-template/internal/version"
+	"github.com/luenci/gpt/internal/project"
+	"github.com/luenci/gpt/internal/version"
 
 	"github.com/spf13/cobra"
 )
