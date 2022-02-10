@@ -1,4 +1,4 @@
-module github.com/luenci/golang-project-template
+module github.com/luenci/gpt
 
 go 1.17
 

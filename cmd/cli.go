@@ -2,16 +2,17 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/luenci/golang-project-template/internal/project"
-	"github.com/luenci/golang-project-template/internal/version"
 	"os"
+
+	"github.com/luenci/gpt/internal/project"
+	"github.com/luenci/gpt/internal/version"
 
 	"github.com/spf13/cobra"
 )
 
 var (
 	rootCmd = &cobra.Command{
-		Use:   "golang-web",
+		Use:   "gpt",
 		Short: "A simple command create golang projects templates",
 		Long: `This command creates golang projects templates,
 			default templates is gin-demo( https://github.com/Lucareful/gin-demo)`,

@@ -7,13 +7,12 @@ import (
 	path "path/filepath"
 	"strings"
 
-	"github.com/luenci/golang-project-template/generator"
-
 	"github.com/AlecAivazis/survey/v2"
+	"github.com/luenci/gpt/generator"
 
 	"github.com/fatih/color"
-	"github.com/luenci/golang-project-template/generator/template"
-	"github.com/luenci/golang-project-template/internal/base"
+	"github.com/luenci/gpt/generator/template"
+	"github.com/luenci/gpt/internal/base"
 )
 
 type Project struct {

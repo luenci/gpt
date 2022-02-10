@@ -1,46 +1,44 @@
-# golang-project-template
-> 本项目是通过CIL命令，一键创建一个golang项目的结构。
+# gpt(golang-project-template)
+> 本项目是通过CIL命令，一键创建一个 golang web 项目的结构。
 
 ## 使用方法
 
 ### 查看版本
 ```bash
-    golang-web version
+    gpt version
 ```
 
 ### 创建项目
 ```bash
-    golang-web create project
+    gpt create project
 ```
 
 ### 使用方法
 #### go get 安装
 ```bash
-    go get -u github.com/luenci/golang-project-template
+    go get -u github.com/luenci/gpt
 ```
 
 ##### 验证版本
 ```shell
-    golang-project-template version
+    gpt version
 ```
-
-
 
 #### 源码安装
 ##### 下载仓库
 ```bash
-    git clone https://github.com/luenci/golang-project-template.git
+    git clone https://github.com/luenci/gpt.git
 ```
 ##### 进入项目
 ```shell
-➜ cd golang-project-template
+➜ cd gpt
 
-➜ go build -o golang-web main.go
+➜ go build -o gpt main.go
 
-➜ ./golang-web version
-  💻 golang-web version is 0.0.1
+➜ ./gpt version
+  💻 gpt version is 0.0.1
 
-➜ ./golang-web create test
+➜ ./gpt create test
     🚀 Creating project test, please wait a moment.
 
     CREATED test (736 bytes)
@@ -70,8 +68,8 @@
     💻 Use the following command to start the project 👇:
 
     $ cd test
-                            🤝 Thanks for using golang-project-template
-            📚 Tutorial: https://github.com/luenci/golang-project-template#readme
+                            🤝 Thanks for using gpt
+            📚 Tutorial: https://github.com/luenci/gpt#readme
 
 ```
 

@@ -33,11 +33,6 @@ func CreateDir(path, dirName string) error {
 
 // CreateTemplateFile creates a file with the given template.
 func CreateTemplateFile(path, fileName, fileTemplate string) error {
-	//funcMap := template.FuncMap{
-	//	// FuncMap中声明相应要使用的函数,在模板中使用
-	//	"ProjectName": fileName,
-	//}
-
 	f, err := os.Create(filepath.Join(path, fileName))
 	defer f.Close()
 	if err != nil {

@@ -1,6 +1,6 @@
 package generator
 
-import "github.com/luenci/golang-project-template/generator/content"
+import "github.com/luenci/gpt/generator/content"
 
 // TemplateMap is the map of templates register.
 var (
