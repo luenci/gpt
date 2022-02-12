@@ -13,6 +13,5 @@ tests
 types
 request
 response
-go.sum
 CHANGELOG.md
 README.md`

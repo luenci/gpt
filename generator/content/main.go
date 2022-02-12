@@ -15,9 +15,6 @@ var (
 	//go:embed makefile.txt
 	Makefile string
 
-	//go:embed module.txt
-	Module string
-
 	//go:embed main.txt
 	MainCLT string
 
