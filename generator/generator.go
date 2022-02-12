@@ -9,6 +9,7 @@ var (
 		".gitignore":              content.GitIgnore,
 		"Dockerfile":              content.Dockerfile,
 		"main.go":                 content.MainCLT,
+		"README.md":               content.GinReadMe,
 	}
 
 	ArgsTemplateMap = map[string]string{

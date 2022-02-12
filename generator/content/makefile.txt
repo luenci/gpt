@@ -1,7 +1,4 @@
-package content
-
-// Makefile is the Makefile template used for new projects.
-var Makefile = `GOPATH:=$(shell go env GOPATH)
+GOPATH:=$(shell go env GOPATH)
 
 .PHONY: init
 init:
@@ -26,4 +23,4 @@ test:
 .PHONY: docker
 docker:
 	@docker build -t {{.}}:latest .
-`
+

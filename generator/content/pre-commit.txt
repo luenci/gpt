@@ -1,6 +1,4 @@
-package content
-
-var PreCommit = `# See https://pre-commit.com for more information
+# See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -27,4 +25,3 @@ repos:
       # - id: go-unit-tests
       # - id: go-build
       - id: go-mod-tidy
-`

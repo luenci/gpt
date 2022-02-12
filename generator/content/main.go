@@ -1,17 +1,26 @@
 package content
 
-// MainCLT is the main template used for new projects.
-var MainCLT = `package main
+import _ "embed"
 
-import "github.com/gin-gonic/gin"
+var (
+	//go:embed pre-commit.txt
+	PreCommit string
 
-func main() {
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
-}
-`
+	//go:embed docker.txt
+	Dockerfile string
+
+	//go:embed gitignore.txt
+	GitIgnore string
+
+	//go:embed makefile.txt
+	Makefile string
+
+	//go:embed module.txt
+	Module string
+
+	//go:embed main.txt
+	MainCLT string
+
+	//go:embed ginReadMe.txt
+	GinReadMe string
+)
