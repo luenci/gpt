@@ -12,6 +12,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	timeout string
+)
+
 func init() {
 	timeout = "180s"
 	CreateCmd.Flags().StringVarP(&timeout, "timeout", "t", timeout, "time out")
@@ -23,10 +27,6 @@ var CreateCmd = &cobra.Command{
 	Long:  `This is cmd to create a new project template.`,
 	Run:   run,
 }
-
-var (
-	timeout string
-)
 
 func run(cmd *cobra.Command, args []string) {
 	wd, err := os.Getwd()
