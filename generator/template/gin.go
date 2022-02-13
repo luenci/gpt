@@ -10,8 +10,7 @@ service
 runtime
 pkg
 tests
-types
-request
-response
+types/request
+types/response
 CHANGELOG.md
 README.md`

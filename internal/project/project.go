@@ -13,12 +13,17 @@ import (
 )
 
 var (
-	timeout string
+	timeout     string
+	projectType string
 )
 
 func init() {
+	// 设置默认值  默认为go
 	timeout = "180s"
+	projectType = "gin"
+
 	CreateCmd.Flags().StringVarP(&timeout, "timeout", "t", timeout, "time out")
+	CreateCmd.Flags().StringVarP(&projectType, "projectType", "p", projectType, "project type")
 }
 
 var CreateCmd = &cobra.Command{
@@ -52,7 +57,7 @@ func run(cmd *cobra.Command, args []string) {
 	} else {
 		name = args[0]
 	}
-	p := &Project{Name: path.Base(name), Path: name}
+	p := &Project{Name: path.Base(name), Path: name, ProjectType: projectType}
 	done := make(chan error, 1)
 	go func() {
 		done <- p.NewProject(ctx, wd)

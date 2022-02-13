@@ -20,4 +20,7 @@ var (
 
 	//go:embed ginReadMe.txt
 	GinReadMe string
+
+	//go:embed DDDReadMe.txt
+	DDDReadMe string
 )
