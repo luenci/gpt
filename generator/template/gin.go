@@ -10,9 +10,7 @@ service
 runtime
 pkg
 tests
-types
-request
-response
-go.sum
+types/request
+types/response
 CHANGELOG.md
 README.md`

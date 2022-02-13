@@ -1,11 +1,10 @@
 package template
 
 var DDD = `
-README.md
 cmd
-main.txt
+main.go
 domain
 entity
-go.mod
-go.sum
-services`
+services
+CHANGELOG.md
+README.md`

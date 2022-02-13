@@ -11,8 +11,15 @@
 ```
 
 ### 创建项目
+
+#### gin web 项目结构(默认结构)
 ```bash
-    gpt create project
+    gpt create -p gin test
+```
+
+#### DDD 项目结构
+```bash
+    gpt create -p DDD tests
 ```
 
 ### 使用方法
@@ -40,38 +47,36 @@
 ➜ ./gpt version
   💻 gpt version is 0.0.1
 
-➜ ./gpt create test
-    🚀 Creating project test, please wait a moment.
+➜ > ./gpt create -p gin tests
+   🚀 Creating project tests, please wait a moment.
 
-    CREATED test (736 bytes)
-    CREATED test/.gitignore (77 bytes)
-    CREATED test/.pre-commit-config.yaml (712 bytes)
-    CREATED test/CHANGELOG.md (0 bytes)
-    CREATED test/Dockerfile (461 bytes)
-    CREATED test/Makefile (365 bytes)
-    CREATED test/README.md (0 bytes)
-    CREATED test/config (64 bytes)
-    CREATED test/docs (64 bytes)
-    CREATED test/go.mod (62 bytes)
-    CREATED test/go.sum (0 bytes)
-    CREATED test/main.go (252 bytes)
-    CREATED test/middleware (64 bytes)
-    CREATED test/models (64 bytes)
-    CREATED test/pkg (64 bytes)
-    CREATED test/request (64 bytes)
-    CREATED test/response (64 bytes)
-    CREATED test/routers (64 bytes)
-    CREATED test/runtime (64 bytes)
-    CREATED test/service (64 bytes)
-    CREATED test/tests (64 bytes)
-    CREATED test/types (64 bytes)
+   CREATED tests (512 bytes)
+   CREATED tests/.gitignore (78 bytes)
+   CREATED tests/.pre-commit-config.yaml (711 bytes)
+   CREATED tests/CHANGELOG.md (0 bytes)
+   CREATED tests/Dockerfile (460 bytes)
+   CREATED tests/Makefile (366 bytes)
+   CREATED tests/README.md (645 bytes)
+   CREATED tests/config (512 bytes)
+   CREATED tests/docs (512 bytes)
+   CREATED tests/main.go (253 bytes)
+   CREATED tests/middleware (512 bytes)
+   CREATED tests/models (512 bytes)
+   CREATED tests/pkg (512 bytes)
+   CREATED tests/routers (512 bytes)
+   CREATED tests/runtime (512 bytes)
+   CREATED tests/service (512 bytes)
+   CREATED tests/tests (512 bytes)
+   CREATED tests/types (512 bytes)
+   CREATED tests/types/request (512 bytes)
+   CREATED tests/types/response (512 bytes)
 
-    🍺 Project creation succeeded test
-    💻 Use the following command to start the project 👇:
+   🍺 Project creation succeeded tests
+   💻 Use the following command to start the project 👇:
 
-    $ cd test
-                            🤝 Thanks for using gpt
-            📚 Tutorial: https://github.com/luenci/gpt#readme
+   $ cd tests
+                        🤝 Thanks for using gpt (golang-project-template)
+        📚 Tutorial: https://github.com/luenci/gpt#readme
 
 ```
 
@@ -81,10 +86,10 @@
 
 ### TODO List
  - [x] 发布一个版本
- - [ ] 补充单元测试
- - [ ] 增加更多的项目结构选择
+ - [x] 增加更多的项目结构选择
    - [x] gin 项目
-   - [ ] DDD 项目
+   - [x] DDD 项目
+ - [ ] 补充单元测试
  - [ ] 增加更多的参数配置化
 
 ### 鸣谢
