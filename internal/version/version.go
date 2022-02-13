@@ -7,7 +7,7 @@ import (
 )
 
 // Version is the golang-project-template Version.
-const Version = "1.0.2"
+const Version = "1.0.3"
 
 func init() {
 }
