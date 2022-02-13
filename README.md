@@ -2,6 +2,14 @@
 - go 版本 > 1.16
 > 本项目是通过CIL命令，一键创建一个 golang web 项目的结构。
 
+## go get 安装
+```bash
+    go get -u github.com/luenci/gpt
+```
+### 验证版本
+```shell
+    gpt version
+```
 
 ## 使用方法
 
@@ -22,16 +30,8 @@
     gpt create -p DDD tests
 ```
 
-### 使用方法
-#### go get 安装
-```bash
-    go get -u github.com/luenci/gpt
-```
 
-##### 验证版本
-```shell
-    gpt version
-```
+
 
 #### 源码安装
 ##### 下载仓库
