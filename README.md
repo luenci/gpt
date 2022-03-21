@@ -31,8 +31,6 @@
 ```
 
 
-
-
 #### 源码安装
 ##### 下载仓库
 ```bash
@@ -81,7 +79,10 @@
 ```
 
 ### 说明
-- 默认的项目结构是为gin框架创建的，基于传统 MVC 架构而设计的。详情见：[gin-demo](https://github.com/Lucareful/gin-demo#readme)
+- 默认的项目结构，参考自 [go-clean-arch](https://github.com/bxcodec/go-clean-arch)做了一些修改。
+
+![img.png](img.png)
+
 - 我个人比较喜欢统一的代码风格和结构,所以将 `pre-commit` 这个配置文件设置为默认项。关于 `pre-commit` 的详细介绍，请参考：[pre-commit](https://pre-commit.com)
 
 ### TODO List
