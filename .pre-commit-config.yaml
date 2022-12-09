@@ -2,26 +2,37 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.4.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
 
-  - repo: https://github.com/dnephin/pre-commit-golang
-    rev: v0.4.0
+  - repo: https://github.com/tekwizely/pre-commit-golang
+    rev: v1.0.0-rc.1
     hooks:
-      - id: go-fmt
-      - id: go-vet
-      - id: go-lint
-      - id: go-imports
-        # - id: go-cyclo
-        # args: [-over=15]
-      - id: validate-toml
-      # - id: no-go-testing
-      - id: golangci-lint
-      # - id: go-critic
-      # - id: go-unit-tests
-      # - id: go-build
+      # Go Mod Tidy
+      #
       - id: go-mod-tidy
+      #
+      # Go Vet
+      #
+      - id: go-vet
+      # Revive
+      #
+      - id: go-revive
+      # Formatters
+      #
+      - id: go-fmt
+      # Style Checkers
+      #
+      - id: go-critic
+      #
+      # GolangCI-Lint
+      # - Fast Multi-Linter
+      # - Can be configured to replace MOST other hooks
+      # - Supports repo config file for configuration
+      # - https://github.com/golangci/golangci-lint
+      #
+      - id: golangci-lint

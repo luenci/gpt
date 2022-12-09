@@ -1,6 +1,6 @@
 package template
 
-var GinWeb = `
+var LayoutTree = `
 cmd
 config
 docs

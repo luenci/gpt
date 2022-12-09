@@ -9,10 +9,7 @@ import (
 // Version is the golang-project-template Version.
 const Version = "1.0.3"
 
-func init() {
-}
-
-var VersionCmd = &cobra.Command{
+var Cmd = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number of golang-web",
 	Long:  `This is the version of golang-web.`,

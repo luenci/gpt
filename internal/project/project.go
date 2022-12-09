@@ -71,7 +71,11 @@ func run(cmd *cobra.Command, args []string) {
 		}
 	case err = <-done:
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "\033[31mERROR: Failed to create project(%s)\033[m\n", err.Error())
+			fmt.Fprintf(
+				os.Stderr,
+				"\033[31mERROR: Failed to create project(%s)\033[m\n",
+				err.Error(),
+			)
 		}
 	}
 }

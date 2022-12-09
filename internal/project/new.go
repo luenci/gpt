@@ -7,13 +7,11 @@ import (
 	path "path/filepath"
 	"strings"
 
-	"github.com/luenci/gpt/generator/content"
-
 	"github.com/AlecAivazis/survey/v2"
-	"github.com/luenci/gpt/generator"
-	"github.com/luenci/gpt/generator/template"
-
 	"github.com/fatih/color"
+	"github.com/luenci/gpt/generator"
+	"github.com/luenci/gpt/generator/content"
+	"github.com/luenci/gpt/generator/template"
 	"github.com/luenci/gpt/internal/base"
 )
 
@@ -48,7 +46,7 @@ func (p *Project) NewProject(ctx context.Context, dir string) error {
 	// 根据传入的项目类型生成空文件和目录
 	switch p.ProjectType {
 	case "gin":
-		for _, file := range template.ParseTemplate(template.GinWeb) {
+		for _, file := range template.ParseTemplate(template.LayoutTree) {
 			if strings.Contains(file, ".") {
 				if err := base.CreateFile(to, file, ""); err != nil {
 					return err
