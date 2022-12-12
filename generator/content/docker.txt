@@ -1,7 +1,4 @@
-package content
-
-// Dockerfile is the Dockerfile template used for new projects.
-var Dockerfile = `FROM golang:1.18 AS builder
+FROM golang:1.18 AS builder
 
 WORKDIR /build
 
@@ -28,5 +25,3 @@ FROM alpine:latest as runner
 WORKDIR /root
 
 CMD ["sh", "-c", "./main"]
-
-`
