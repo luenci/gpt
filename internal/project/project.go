@@ -13,17 +13,17 @@ import (
 )
 
 var (
-	timeout     string
-	projectType string
+	timeout string
+	temple  string
 )
 
 func init() {
 	// 设置默认值  默认为go
 	timeout = "180s"
-	projectType = "gin"
+	temple = "gin"
 
 	CreateCmd.Flags().StringVarP(&timeout, "timeout", "t", timeout, "time out")
-	CreateCmd.Flags().StringVarP(&projectType, "projectType", "p", projectType, "project type")
+	CreateCmd.Flags().StringVarP(&temple, "temple", "p", temple, "project temple")
 }
 
 var CreateCmd = &cobra.Command{
@@ -57,7 +57,7 @@ func run(cmd *cobra.Command, args []string) {
 	} else {
 		name = args[0]
 	}
-	p := &Project{Name: path.Base(name), Path: name, ProjectType: projectType}
+	p := &Project{Name: path.Base(name), Path: name, ProjectType: temple}
 	done := make(chan error, 1)
 	go func() {
 		done <- p.NewProject(ctx, wd)
@@ -71,7 +71,11 @@ func run(cmd *cobra.Command, args []string) {
 		}
 	case err = <-done:
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "\033[31mERROR: Failed to create project(%s)\033[m\n", err.Error())
+			fmt.Fprintf(
+				os.Stderr,
+				"\033[31mERROR: Failed to create project(%s)\033[m\n",
+				err.Error(),
+			)
 		}
 	}
 }
