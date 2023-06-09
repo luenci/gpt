@@ -8,6 +8,7 @@ var (
 		".pre-commit-config.yaml": content.PreCommit,
 		".gitignore":              content.GitIgnore,
 		"Dockerfile":              content.Dockerfile,
+		".golangci.yml":           content.GolangCI,
 		"main.go":                 content.MainCLT,
 	}
 

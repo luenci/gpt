@@ -12,6 +12,9 @@ var (
 	//go:embed gitignore.txt
 	GitIgnore string
 
+	//go:embed golangci.txt
+	GolangCI string
+
 	//go:embed makefile.txt
 	Makefile string
 

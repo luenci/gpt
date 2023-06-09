@@ -14,17 +14,23 @@ import (
 // CreateFile creates a file with the given name and content.
 func CreateFile(path, fileName, fileContent string) error {
 	f, err := os.Create(filepath.Join(path, fileName))
-	defer f.Close()
+
+	defer f.Close() //nolint:staticcheck
+
 	if err != nil {
 		return err
 	}
-	_, err = f.Write([]byte(fileContent))
+
+	if _, err = f.Write([]byte(fileContent)); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 // CreateDir creates a directory with the given name.
 func CreateDir(path, dirName string) error {
-	var re = regexp.MustCompile(`/|\\`)
+	re := regexp.MustCompile(`/|\\`)
 	if re.MatchString(dirName) {
 		return os.MkdirAll(filepath.Join(path, dirName), os.ModePerm)
 	}
@@ -34,10 +40,11 @@ func CreateDir(path, dirName string) error {
 // CreateTemplateFile creates a file with the given template.
 func CreateTemplateFile(path, fileName, fileTemplate string) error {
 	f, err := os.Create(filepath.Join(path, fileName))
-	defer f.Close()
+	defer f.Close() //nolint:staticcheck
 	if err != nil {
 		return err
 	}
+
 	t, err := template.New(fileName).Parse(fileTemplate)
 	if err != nil {
 		return err
@@ -54,11 +61,13 @@ func CreateTemplateFile(path, fileName, fileTemplate string) error {
 // CreateArgsTemplate creates a file with arguments template.
 func CreateArgsTemplate(path, fileName, ArgsTemplate string) error {
 	projectName := fileName
+
 	f, err := os.Create(filepath.Join(path, fileName))
-	defer f.Close()
+	defer f.Close() //nolint:staticcheck
 	if err != nil {
 		return err
 	}
+
 	t, err := template.New(fileName).Parse(ArgsTemplate)
 	if err != nil {
 		return err
@@ -76,7 +85,12 @@ func CreateArgsTemplate(path, fileName, ArgsTemplate string) error {
 func Tree(path, dir string) {
 	_ = filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		if err == nil && info != nil {
-			fmt.Printf("%s %s (%v bytes)\n", color.GreenString("CREATED"), strings.Replace(path, dir+"/", "", -1), info.Size())
+			fmt.Printf(
+				"%s %s (%v bytes)\n",
+				color.GreenString("CREATED"),
+				strings.Replace(path, dir+"/", "", -1),
+				info.Size(),
+			)
 		}
 		return nil
 	})

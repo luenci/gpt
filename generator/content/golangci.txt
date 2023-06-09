@@ -1,0 +1,68 @@
+linters:
+  disable-all: true
+  fast: true
+  enable:
+    - bodyclose # 检查是否在 HTTP 请求后关闭响应体
+    - dogsled # 检查拼写错误
+    - durationcheck # 检查 time.Duration 是否为负值
+    - errcheck # 检查未处理的错误
+    - exportloopref # 检查循环引用
+    - govet # 检查常见错误
+    - gosimple # 检查简化代码
+    - gofmt # 检查代码格式
+    - gofumpt # 检查代码格式
+    - goconst # 检查重复的字符串
+    - goimports # 检查导入
+    - gomnd # 检查魔法数字
+    - gocyclo # 检查圈复杂度
+    - ineffassign # 检查无用的赋值
+    - lll # 检查行长度
+    - prealloc # 检查循环中的预分配
+    - revive # 另一个轻量级的静态代码检查工具，可以检测代码中的错误和不良习惯，并提供修复建议。
+    - staticcheck # 检查代码格式
+    - typecheck # 检查类型
+    - unused # 检查未使用的代码
+    - whitespace # 检查空白符
+    - wastedassign # 检查无用的赋值
+    - unconvert # 检查类型转换
+
+  # don't enable:
+  # - asciicheck
+  # - scopelint
+  # - gochecknoglobals
+  # - gocognit
+  # - godot
+  # - godox
+  # - goerr113
+  # - interfacer
+  # - maligned
+  # - nestif
+  # - prealloc
+  # - testpackage
+  # - stylrcheck
+  # - wsl
+
+linters-settings:
+  govet:
+    check-shadowing: true
+    check-unreachable: true
+    check-rangeloops: true
+    check-copylocks: true
+  maligned:
+    suggest-new: true # 内存对齐优化结构体字段排序建议
+    auto-fix: true # 自动修复
+  whitespace:
+    multi-func: true
+  lll:
+    line-length: 160
+  gomnd:
+    # don't include the "operation", "argument" and "assign"
+    checks:
+      - case
+      - condition
+      - return
+  goconst:
+    ignore-tests: true
+  gocyclo:
+    # recommend 10-20
+    min-complexity: 50
