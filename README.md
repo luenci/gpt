@@ -46,40 +46,46 @@
   💻 gpt version is 0.0.1
 
 ➜ > ./gpt create -p gin tests
-   🚀 Creating project tests, please wait a moment.
+? What is project name ? luenci
+🚀 Creating project luenci, please wait a moment.
 
-   CREATED tests (512 bytes)
-   CREATED tests/.gitignore (78 bytes)
-   CREATED tests/.pre-commit-config.yaml (711 bytes)
-   CREATED tests/CHANGELOG.md (0 bytes)
-   CREATED tests/Dockerfile (460 bytes)
-   CREATED tests/Makefile (366 bytes)
-   CREATED tests/README.md (645 bytes)
-   CREATED tests/config (512 bytes)
-   CREATED tests/docs (512 bytes)
-   CREATED tests/main.go (253 bytes)
-   CREATED tests/middleware (512 bytes)
-   CREATED tests/models (512 bytes)
-   CREATED tests/pkg (512 bytes)
-   CREATED tests/routers (512 bytes)
-   CREATED tests/runtime (512 bytes)
-   CREATED tests/service (512 bytes)
-   CREATED tests/tests (512 bytes)
-   CREATED tests/types (512 bytes)
-   CREATED tests/types/request (512 bytes)
-   CREATED tests/types/response (512 bytes)
+CREATED luenci (608 bytes)
+CREATED luenci/.gitignore (5475 bytes)
+CREATED luenci/.golangci.yml (1812 bytes)
+CREATED luenci/.pre-commit-config.yaml (520 bytes)
+CREATED luenci/CHANGELOG.md (0 bytes)
+CREATED luenci/Dockerfile (452 bytes)
+CREATED luenci/Makefile (366 bytes)
+CREATED luenci/README.md (645 bytes)
+CREATED luenci/cmd (64 bytes)
+CREATED luenci/config (64 bytes)
+CREATED luenci/docs (64 bytes)
+CREATED luenci/go.sum (0 bytes)
+CREATED luenci/internal (224 bytes)
+CREATED luenci/internal/app (64 bytes)
+CREATED luenci/internal/controller (128 bytes)
+CREATED luenci/internal/controller/http (96 bytes)
+CREATED luenci/internal/controller/http/v1 (64 bytes)
+CREATED luenci/internal/controller/rpc (64 bytes)
+CREATED luenci/internal/entity (64 bytes)
+CREATED luenci/internal/infra (64 bytes)
+CREATED luenci/internal/usecase (64 bytes)
+CREATED luenci/main.go (253 bytes)
+CREATED luenci/pkg (64 bytes)
+CREATED luenci/runtime (64 bytes)
+CREATED luenci/schema (64 bytes)
+CREATED luenci/tests (64 bytes)
 
-   🍺 Project creation succeeded tests
-   💻 Use the following command to start the project 👇:
+🍺 Project creation succeeded luenci
+💻 Use the following command to start the project 👇:
 
-   $ cd tests
+$ cd luenci
                         🤝 Thanks for using gpt (golang-project-template)
         📚 Tutorial: https://github.com/luenci/gpt#readme
-
 ```
 
 ### 说明
-- 默认的项目结构，参考自 [go-clean-arch](https://github.com/bxcodec/go-clean-arch)做了一些修改。
+- 默认的项目结构，参考自 [go-backend-clean-architecture](https://github.com/amitshekhariitbhu/go-backend-clean-architecture)做了一些修改
 
 ![img.png](img.png)
 

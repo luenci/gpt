@@ -23,7 +23,7 @@ type Project struct {
 }
 
 // NewProject new a project template.
-func (p *Project) NewProject(ctx context.Context, dir string) error {
+func (p *Project) NewProject(_ context.Context, dir string) error {
 	to := path.Join(dir, p.Name)
 	if _, err := os.Stat(to); !os.IsNotExist(err) {
 		fmt.Printf("🚫 %s already exists\n", p.Name)
