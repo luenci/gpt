@@ -7,7 +7,7 @@ import (
 )
 
 // Version is the golang-project-template Version.
-const Version = "1.0.3"
+const Version = "1.0.4"
 
 var Cmd = &cobra.Command{
 	Use:   "version",
