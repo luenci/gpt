@@ -57,11 +57,14 @@ func run(_ *cobra.Command, args []string) {
 	} else {
 		name = args[0]
 	}
+
 	p := &Project{Name: path.Base(name), Path: name, ProjectType: temple}
 	done := make(chan error, 1)
+
 	go func() {
 		done <- p.NewProject(ctx, wd)
 	}()
+
 	select {
 	case <-ctx.Done():
 		if errors.Is(ctx.Err(), context.DeadlineExceeded) {

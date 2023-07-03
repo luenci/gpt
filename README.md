@@ -30,7 +30,6 @@
     gpt create -p DDD tests
 ```
 
-
 #### 源码安装
 ##### 下载仓库
 ```bash
