@@ -46,28 +46,31 @@
 
 ➜ > ./gpt create -p gin tests
 ? What is project name ? luenci
+? What is go version ? 1.20
+? What is go.mod name ? luenci
 🚀 Creating project luenci, please wait a moment.
 
-CREATED luenci (608 bytes)
+CREATED luenci (640 bytes)
 CREATED luenci/.gitignore (5475 bytes)
 CREATED luenci/.golangci.yml (1812 bytes)
 CREATED luenci/.pre-commit-config.yaml (520 bytes)
 CREATED luenci/CHANGELOG.md (0 bytes)
 CREATED luenci/Dockerfile (452 bytes)
-CREATED luenci/Makefile (366 bytes)
-CREATED luenci/README.md (645 bytes)
+CREATED luenci/Makefile (394 bytes)
+CREATED luenci/README.md (551 bytes)
 CREATED luenci/cmd (64 bytes)
 CREATED luenci/config (64 bytes)
 CREATED luenci/docs (64 bytes)
+CREATED luenci/go.mod (72 bytes)
 CREATED luenci/go.sum (0 bytes)
 CREATED luenci/internal (224 bytes)
-CREATED luenci/internal/app (64 bytes)
 CREATED luenci/internal/controller (128 bytes)
 CREATED luenci/internal/controller/http (96 bytes)
 CREATED luenci/internal/controller/http/v1 (64 bytes)
 CREATED luenci/internal/controller/rpc (64 bytes)
 CREATED luenci/internal/entity (64 bytes)
 CREATED luenci/internal/infra (64 bytes)
+CREATED luenci/internal/server (64 bytes)
 CREATED luenci/internal/usecase (64 bytes)
 CREATED luenci/main.go (253 bytes)
 CREATED luenci/pkg (64 bytes)
@@ -81,6 +84,7 @@ CREATED luenci/tests (64 bytes)
 $ cd luenci
                         🤝 Thanks for using gpt (golang-project-template)
         📚 Tutorial: https://github.com/luenci/gpt#readme
+
 ```
 
 ### 说明
