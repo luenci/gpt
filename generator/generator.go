@@ -14,5 +14,6 @@ var (
 
 	ArgsTemplateMap = map[string]string{
 		"Makefile": content.Makefile,
+		"go.mod":   content.GoMod,
 	}
 )

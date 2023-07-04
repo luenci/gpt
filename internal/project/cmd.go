@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	path "path/filepath"
+	"path/filepath"
 	"time"
 
 	"github.com/AlecAivazis/survey/v2"
@@ -16,6 +16,12 @@ var (
 	timeout string
 	temple  string
 )
+
+type SurveyInfo struct {
+	Name      string `survey:"name"`
+	GoMod     string `survey:"goMod"`
+	GoVersion string `survey:"goVersion"`
+}
 
 func init() {
 	// 设置默认值  默认为go
@@ -33,35 +39,57 @@ var CreateCmd = &cobra.Command{
 	Run:   run,
 }
 
-func run(_ *cobra.Command, args []string) {
+func run(_ *cobra.Command, _ []string) {
 	wd, err := os.Getwd()
 	if err != nil {
 		panic(err)
 	}
+
 	t, err := time.ParseDuration(timeout)
 	if err != nil {
 		panic(err)
 	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), t)
 	defer cancel()
-	name := ""
-	if len(args) == 0 {
-		prompt := &survey.Input{
-			Message: "What is project name ?",
-			Help:    "Created project name.",
-		}
-		err = survey.AskOne(prompt, &name)
-		if err != nil || name == "" {
-			return
-		}
-	} else {
-		name = args[0]
+
+	var surveyInfo SurveyInfo
+	prompt := []*survey.Question{
+		{
+			Name: "name",
+			Prompt: &survey.Input{
+				Message: "What is project name ?",
+				Help:    "Created project name.",
+			},
+			Validate: survey.Required,
+		},
+		{
+			Name: "goVersion",
+			Prompt: &survey.Input{
+				Message: "What is go version ?",
+				Help:    "Created go version .",
+			},
+			Validate: survey.Required,
+		},
+		{
+			Name: "goMod",
+			Prompt: &survey.Input{
+				Message: "What is go.mod name ?",
+				Help:    "Created go.mod name.",
+			},
+		},
 	}
-	p := &Project{Name: path.Base(name), Path: name, ProjectType: temple}
+	if err = survey.Ask(prompt, &surveyInfo); err != nil {
+		panic(err)
+	}
+
+	p := &Project{Name: filepath.Base(surveyInfo.Name), Path: surveyInfo.Name, ProjectType: temple}
 	done := make(chan error, 1)
+
 	go func() {
-		done <- p.NewProject(ctx, wd)
+		done <- p.NewProject(ctx, wd, surveyInfo.GoVersion, surveyInfo.GoMod)
 	}()
+
 	select {
 	case <-ctx.Done():
 		if errors.Is(ctx.Err(), context.DeadlineExceeded) {

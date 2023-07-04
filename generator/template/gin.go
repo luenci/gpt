@@ -4,7 +4,7 @@ var LayoutTree = `
 cmd
 config
 docs
-internal/app
+internal/server
 internal/infra
 internal/entity
 internal/usecase
