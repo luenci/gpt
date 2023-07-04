@@ -26,4 +26,7 @@ var (
 
 	//go:embed DDDReadMe.txt
 	DDDReadMe string
+
+	//go:embed gomod.txt
+	GoMod string
 )

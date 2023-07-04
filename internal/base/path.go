@@ -59,26 +59,19 @@ func CreateTemplateFile(path, fileName, fileTemplate string) error {
 }
 
 // CreateArgsTemplate creates a file with arguments template.
-func CreateArgsTemplate(path, fileName, ArgsTemplate string) error {
-	projectName := fileName
-
-	f, err := os.Create(filepath.Join(path, fileName))
+func CreateArgsTemplate(path, templ string, args ArgsTemplate) error {
+	f, err := os.Create(filepath.Join(path, args.ProjectName))
 	defer f.Close() //nolint:staticcheck
 	if err != nil {
 		return err
 	}
 
-	t, err := template.New(fileName).Parse(ArgsTemplate)
+	t, err := template.New(args.ProjectName).Parse(templ)
 	if err != nil {
 		return err
 	}
 
-	err = t.Execute(f, projectName)
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return t.Execute(f, args)
 }
 
 // Tree Path represents a path to a file or directory.

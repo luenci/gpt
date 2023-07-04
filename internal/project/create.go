@@ -23,7 +23,7 @@ type Project struct {
 }
 
 // NewProject new a project template.
-func (p *Project) NewProject(_ context.Context, dir string) error {
+func (p *Project) NewProject(_ context.Context, dir, goVersion, modName string) error {
 	to := path.Join(dir, p.Name)
 	if _, err := os.Stat(to); !os.IsNotExist(err) {
 		fmt.Printf("🚫 %s already exists\n", p.Name)
@@ -77,8 +77,6 @@ func (p *Project) NewProject(_ context.Context, dir string) error {
 		}
 	}
 
-	// 生成项目模板README
-
 	// 生成通用的模版文件和内容
 	for fileName, temlp := range generator.TemplateMap {
 		if err := base.CreateTemplateFile(to, fileName, temlp); err != nil {
@@ -86,9 +84,17 @@ func (p *Project) NewProject(_ context.Context, dir string) error {
 		}
 	}
 
+	if modName == "" {
+		modName = p.Name
+	}
+
 	// 生成参数模版文件
 	for fileName, argsTemlp := range generator.ArgsTemplateMap {
-		if err := base.CreateArgsTemplate(to, fileName, argsTemlp); err != nil {
+		if err := base.CreateArgsTemplate(to, argsTemlp, base.ArgsTemplate{
+			ProjectName: fileName,
+			GoModName:   modName,
+			GoVersion:   goVersion,
+		}); err != nil {
 			return err
 		}
 	}
